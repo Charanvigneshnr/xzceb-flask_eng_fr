@@ -20,14 +20,17 @@ language_translator.set_service_url(url)
 language_translator.set_disable_ssl_verification(True)
 
 
-languages = language_translator.list_identifiable_languages().get_result()
-print(json.dumps(languages, indent=2))
+def englishToFrench(englishText):
+    translation = language_translator.translate(
+        text=englishText,
+        model_id='en-fr').get_result()
+    str = dict(translation)
+    return (((str["translations"])[0])["translation"])
 
-# def englishToFrench(englishText):
-#     # write the code here
-#     return frenchText
 
-
-# def frenchToEnglish(frenchText):
-#     # write the code here
-#     return englishText
+def frenchToEnglish(frenchText):
+    translation = language_translator.translate(
+        text=frenchText,
+        model_id='fr-en').get_result()
+    str = dict(translation)
+    return (((str["translations"])[0])["translation"])
