@@ -1,7 +1,4 @@
-english_to_french = document.getElementById("en-fr").innerText;
-{
-  textToTranslate = document.getElementById("textToTranslate").value;
-
+function english_to_french() {
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -16,8 +13,7 @@ english_to_french = document.getElementById("en-fr").innerText;
   xhttp.send();
 }
 
-french_to_english = document.getElementById("fr-en").innerText;
-{
+function french_to_english() {
   textToTranslate = document.getElementById("textToTranslate").value;
 
   let xhttp = new XMLHttpRequest();
